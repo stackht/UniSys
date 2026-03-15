@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduSys Admin ERP | College Operations Suite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Baloo+2:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+    <div class="app-shell">
+    <aside class="sidebar">
+      <div class="logo" style="margin-bottom: 20px;">
+        <span class="logo-badge">E</span>
+        <span>EduSys Admin ERP</span>
+      </div>
+      <nav id="module-nav">
+        <button class="nav-item active" data-module="overview">Overview</button>
+        <button class="nav-item" data-module="admissions">Admissions</button>
+        <button class="nav-item" data-module="students">Students</button>
+        <button class="nav-item" data-module="academics">Academics</button>
+        <button class="nav-item" data-module="attendance">Attendance</button>
+        <button class="nav-item" data-module="exams">Exams</button>
+        <button class="nav-item" data-module="faculty">Faculty</button>
+        <button class="nav-item" data-module="finance">Finance</button>
+        <button class="nav-item" data-module="hr">HR & Payroll</button>
+        <button class="nav-item" data-module="library">Library</button>
+        <button class="nav-item" data-module="hostel">Hostel</button>
+        <button class="nav-item" data-module="transport">Transport</button>
+        <button class="nav-item" data-module="placements">Placements</button>
+        <button class="nav-item" data-module="research">Research</button>
+        <button class="nav-item" data-module="facilities">Facilities</button>
+        <button class="nav-item" data-module="inventory">Inventory</button>
+        <button class="nav-item" data-module="procurement">Procurement</button>
+        <button class="nav-item" data-module="service">Service Desk</button>
+        <button class="nav-item" data-module="communications">Communications</button>
+        <button class="nav-item" data-module="compliance">Compliance</button>
+        <button class="nav-item" data-module="integrations">Integrations</button>
+        <button class="nav-item" data-module="analytics">Analytics</button>
+        <button class="nav-item" data-module="attainment">Attainment</button>
+        <button class="nav-item" data-module="coverage">ERP Coverage</button>
+      </nav>
+      <div style="margin-top: 18px;">
+        <a class="btn" href="../index.html">Back to UniSys</a>
+      </div>
+    </aside>
+
+    <main id="main" class="content">
+      <div class="topbar">
+        <div class="search">
+          <input id="global-search" placeholder="Search students, tickets, invoices, exams..." />
+        </div>
+        <div class="hero-actions">
+          <button class="btn" id="theme-toggle" aria-label="Toggle theme">🌓</button>
+          <button class="btn">New Task</button>
+          <button class="btn btn-primary">Create Record</button>
+        </div>
+      </div>
+
+      <section class="module-section active" id="overview">
+        <div class="panel">
+          <div class="hero-grid">
+            <div>
+              <span class="pill">ERP Control Center</span>
+              <h1>Unified command for college operations.</h1>
+              <p>Manage academics, administration, finance, HR, compliance, facilities, and student services with real-time visibility and workflows.</p>
+              <div class="hero-actions">
+                <button class="btn btn-primary" data-module-jump="admissions">Open Admissions</button>
+                <button class="btn" data-module-jump="finance">Review Finance</button>
+              </div>
+            </div>
+            <div class="canvas-wrap">
+              <canvas id="admin-canvas" aria-label="3D ERP model visualization"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi"><strong>1,842</strong> Active students <div class="status-pill">+3.1% MoM</div></div>
+          <div class="kpi"><strong>94%</strong> Attendance compliance <div class="status-pill">On track</div></div>
+          <div class="kpi"><strong>₹4.8Cr</strong> Fees collected <div class="status-pill">₹32L pending</div></div>
+          <div class="kpi"><strong>128</strong> Open service tickets <div class="status-pill">12 high priority</div></div>
+        </div>
+
+        <div class="grid grid-2" style="margin-top: 20px;">
+          <div class="panel">
+            <h3>Operational health</h3>
+            <div style="margin-top: 12px;">
+              <div>Admissions funnel</div>
+              <div class="progress"><span style="width: 72%;"></span></div>
+              <div style="margin-top: 10px;">Exam readiness</div>
+              <div class="progress"><span style="width: 86%;"></span></div>
+              <div style="margin-top: 10px;">Accreditation evidence</div>
+              <div class="progress"><span style="width: 64%;"></span></div>
+            </div>
+          </div>
+          <div class="panel">
+            <h3>Quick approvals</h3>
+            <table class="table">
+              <thead><tr><th>Type</th><th>Owner</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>Leave Request</td><td>Dr. Rao</td><td><span class="status-pill">Pending</span></td></tr>
+                <tr><td>Purchase Order</td><td>Library</td><td><span class="status-pill">Review</span></td></tr>
+                <tr><td>Result Moderation</td><td>COE</td><td><span class="status-pill">Due today</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="module-section" id="admissions">
+        <div class="panel">
+          <h2>Admissions CRM</h2>
+          <p class="section-sub">Capture leads, manage applications, and convert prospects to enrolled students.</p>
+          <div class="form-grid">
+            <label>Applicant Name<input id="admission-name" /></label>
+            <label>Program<select id="admission-program"><option>B.Tech CSE</option><option>MBA</option><option>BBA</option></select></label>
+            <label>Stage<select id="admission-stage"><option>Lead</option><option>Applied</option><option>Verified</option><option>Offered</option><option>Enrolled</option></select></label>
+            <label>Score<input id="admission-score" type="number" value="78" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-admission">Add Applicant</button>
+            <button class="btn" data-action="convert-student">Convert to Student</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Admission Pipeline</h3>
+          <table class="table" id="admission-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="students">
+        <div class="panel">
+          <h2>Student Registry</h2>
+          <div class="form-grid">
+            <label>Name<input id="student-name" /></label>
+            <label>Roll No<input id="student-roll" /></label>
+            <label>Department<select id="student-dept"><option>CSE</option><option>ECE</option><option>ME</option><option>Civil</option><option>MBA</option></select></label>
+            <label>Status<select id="student-status"><option>Active</option><option>On Hold</option><option>Alumni</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-student">Add Student</button>
+            <button class="btn" data-action="delete-student">Remove Selected</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Student List</h3>
+          <table class="table" id="student-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="academics">
+        <div class="panel">
+          <h2>Academic Planning</h2>
+          <div class="form-grid">
+            <label>Course Code<input id="course-code" /></label>
+            <label>Course Name<input id="course-name" /></label>
+            <label>Credits<input id="course-credits" type="number" value="3" /></label>
+            <label>Faculty<select id="course-faculty"><option>Dr. Rao</option><option>Prof. Singh</option></select></label>
+            <label>Semester<select id="course-sem"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option></select></label>
+            <label>Certificate Name<input id="course-cert" placeholder="e.g. Data Structures Certificate" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-course">Add Course</button>
+            <button class="btn" data-action="update-course">Update Course</button>
+            <button class="btn" data-action="delete-course">Delete Course</button>
+            <button class="btn" data-action="issue-course-cert">Issue Certificate</button>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <input id="course-upload" type="file" accept=".csv" class="btn" />
+            <span class="status-pill">Upload CSV to auto-fill courses</span>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Course Registry</h3>
+          <table class="table" id="course-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="attendance">
+        <div class="panel">
+          <h2>Attendance Management</h2>
+          <div class="form-grid">
+            <label>Class<select id="att-class"><option>CSE A</option><option>ECE B</option></select></label>
+            <label>Course<select id="att-course"><option>DSA</option><option>Thermodynamics</option></select></label>
+            <label>Present %<input id="att-present" type="number" value="86" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="mark-attendance">Record Attendance</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Attendance Logs</h3>
+          <table class="table" id="attendance-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="exams">
+        <div class="panel">
+          <h2>Examinations</h2>
+          <div class="form-grid">
+            <label>Exam<select id="exam-name"><option>Mid Sem</option><option>End Sem</option></select></label>
+            <label>Course<input id="exam-course" /></label>
+            <label>Date<input id="exam-date" type="date" /></label>
+            <label>Hall<input id="exam-hall" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="schedule-exam">Schedule Exam</button>
+            <button class="btn" data-action="publish-results">Publish Results</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Exam Schedule</h3>
+          <table class="table" id="exam-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="faculty">
+        <div class="panel">
+          <h2>Faculty Management</h2>
+          <div class="form-grid">
+            <label>Name<input id="faculty-name" /></label>
+            <label>Department<select id="faculty-dept"><option>CSE</option><option>ECE</option><option>ME</option></select></label>
+            <label>Load (hrs)<input id="faculty-load" type="number" value="12" /></label>
+            <label>Status<select id="faculty-status"><option>Active</option><option>On Leave</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-faculty">Add Faculty</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Faculty Roster</h3>
+          <table class="table" id="faculty-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="finance">
+        <div class="panel">
+          <h2>Finance & Fees</h2>
+          <div class="form-grid">
+            <label>Student<input id="fee-student" /></label>
+            <label>Amount<input id="fee-amount" type="number" value="45000" /></label>
+            <label>Due Date<input id="fee-due" type="date" /></label>
+            <label>Status<select id="fee-status"><option>Pending</option><option>Paid</option><option>Overdue</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-invoice">Create Invoice</button>
+            <button class="btn" data-action="record-payment">Record Payment</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Invoices</h3>
+          <table class="table" id="fee-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="hr">
+        <div class="panel">
+          <h2>HR & Payroll</h2>
+          <div class="form-grid">
+            <label>Employee<input id="hr-name" /></label>
+            <label>Role<input id="hr-role" /></label>
+            <label>Salary<input id="hr-salary" type="number" value="65000" /></label>
+            <label>Shift<select id="hr-shift"><option>Day</option><option>Evening</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-employee">Add Employee</button>
+            <button class="btn" data-action="run-payroll">Run Payroll</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Staff Directory</h3>
+          <table class="table" id="hr-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="library">
+        <div class="panel">
+          <h2>Library</h2>
+          <div class="form-grid">
+            <label>Book Title<input id="lib-title" /></label>
+            <label>Author<input id="lib-author" /></label>
+            <label>Copies<input id="lib-copies" type="number" value="5" /></label>
+            <label>Status<select id="lib-status"><option>Available</option><option>Issued</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-book">Add Book</button>
+            <button class="btn" data-action="issue-book">Issue Book</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Library Catalog</h3>
+          <table class="table" id="library-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="hostel">
+        <div class="panel">
+          <h2>Hostel Management</h2>
+          <div class="form-grid">
+            <label>Room<input id="hostel-room" /></label>
+            <label>Student<input id="hostel-student" /></label>
+            <label>Capacity<input id="hostel-capacity" type="number" value="2" /></label>
+            <label>Status<select id="hostel-status"><option>Occupied</option><option>Vacant</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="allocate-room">Allocate Room</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Room Allocation</h3>
+          <table class="table" id="hostel-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="transport">
+        <div class="panel">
+          <h2>Transport</h2>
+          <div class="form-grid">
+            <label>Route<input id="transport-route" /></label>
+            <label>Vehicle<input id="transport-vehicle" /></label>
+            <label>Driver<input id="transport-driver" /></label>
+            <label>Status<select id="transport-status"><option>Active</option><option>Maintenance</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-route">Add Route</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Routes</h3>
+          <table class="table" id="transport-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="placements">
+        <div class="panel">
+          <h2>Placements</h2>
+          <div class="form-grid">
+            <label>Company<input id="place-company" /></label>
+            <label>Role<input id="place-role" /></label>
+            <label>Date<input id="place-date" type="date" /></label>
+            <label>Status<select id="place-status"><option>Scheduled</option><option>Ongoing</option><option>Closed</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-placement">Add Drive</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Placement Drives</h3>
+          <table class="table" id="placement-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="research">
+        <div class="panel">
+          <h2>Research & Grants</h2>
+          <div class="form-grid">
+            <label>Project<input id="res-project" /></label>
+            <label>PI<input id="res-pi" /></label>
+            <label>Funding<input id="res-fund" type="number" value="100000" /></label>
+            <label>Status<select id="res-status"><option>Active</option><option>Review</option><option>Completed</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-research">Add Project</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Research Portfolio</h3>
+          <table class="table" id="research-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="facilities">
+        <div class="panel">
+          <h2>Facilities & Assets</h2>
+          <div class="form-grid">
+            <label>Asset<input id="fac-asset" /></label>
+            <label>Location<input id="fac-location" /></label>
+            <label>Condition<select id="fac-condition"><option>Good</option><option>Service Due</option><option>Critical</option></select></label>
+            <label>Ticket<input id="fac-ticket" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-asset">Add Asset</button>
+            <button class="btn" data-action="raise-ticket">Raise Ticket</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Asset Log</h3>
+          <table class="table" id="facility-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="inventory">
+        <div class="panel">
+          <h2>Inventory</h2>
+          <div class="form-grid">
+            <label>Item<input id="inv-item" /></label>
+            <label>Qty<input id="inv-qty" type="number" value="10" /></label>
+            <label>Store<select id="inv-store"><option>Main</option><option>Lab</option></select></label>
+            <label>Status<select id="inv-status"><option>In Stock</option><option>Low</option><option>Out</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-inventory">Add Item</button>
+            <button class="btn" data-action="issue-inventory">Issue Item</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Stock Register</h3>
+          <table class="table" id="inventory-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="procurement">
+        <div class="panel">
+          <h2>Procurement</h2>
+          <div class="form-grid">
+            <label>Vendor<input id="proc-vendor" /></label>
+            <label>Item<input id="proc-item" /></label>
+            <label>Amount<input id="proc-amount" type="number" value="25000" /></label>
+            <label>Status<select id="proc-status"><option>Requested</option><option>Approved</option><option>Ordered</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-procurement">Create PO</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Purchase Orders</h3>
+          <table class="table" id="procurement-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="service">
+        <div class="panel">
+          <h2>Service Desk</h2>
+          <div class="form-grid">
+            <label>Requester<input id="svc-requester" /></label>
+            <label>Category<select id="svc-category"><option>IT</option><option>Facilities</option><option>Academic</option></select></label>
+            <label>Priority<select id="svc-priority"><option>Low</option><option>Medium</option><option>High</option></select></label>
+            <label>Status<select id="svc-status"><option>Open</option><option>In Progress</option><option>Closed</option></select></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-ticket">Create Ticket</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Tickets</h3>
+          <table class="table" id="service-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="communications">
+        <div class="panel">
+          <h2>Communications</h2>
+          <div class="form-grid">
+            <label>Audience<select id="comm-audience"><option>All</option><option>Students</option><option>Faculty</option></select></label>
+            <label>Channel<select id="comm-channel"><option>Email</option><option>SMS</option><option>App</option></select></label>
+            <label>Message<textarea id="comm-message" rows="3"></textarea></label>
+            <label>Schedule<input id="comm-date" type="datetime-local" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="send-broadcast">Send Broadcast</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Broadcast History</h3>
+          <table class="table" id="comm-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="compliance">
+        <div class="panel">
+          <h2>Compliance & Accreditation</h2>
+          <div class="badge-row">
+            <div class="badge">NAAC</div>
+            <div class="badge">NBA</div>
+            <div class="badge">AICTE</div>
+            <div class="badge">UGC</div>
+          </div>
+          <div class="form-grid" style="margin-top: 12px;">
+            <label>Evidence Title<input id="comp-title" /></label>
+            <label>Criterion<select id="comp-criterion"><option>Criterion 1</option><option>Criterion 2</option></select></label>
+            <label>Owner<input id="comp-owner" /></label>
+            <label>Upload<input id="comp-file" type="file" /></label>
+          </div>
+          <div class="form-actions" style="margin-top: 12px;">
+            <button class="btn btn-primary" data-action="add-evidence">Add Evidence</button>
+          </div>
+        </div>
+        <div class="panel">
+          <h3>Evidence Tracker</h3>
+          <table class="table" id="compliance-table"></table>
+        </div>
+      </section>
+
+      <section class="module-section" id="integrations">
+        <div class="panel">
+          <h2>Integration Hub</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3>Biometric Devices</h3><label class="toggle"><input type="checkbox" checked />Active</label></div>
+            <div class="card"><h3>LMS</h3><label class="toggle"><input type="checkbox" checked />Active</label></div>
+            <div class="card"><h3>Payment Gateway</h3><label class="toggle"><input type="checkbox" checked />Active</label></div>
+            <div class="card"><h3>Email/SMS</h3><label class="toggle"><input type="checkbox" />Paused</label></div>
+            <div class="card"><h3>HRMS</h3><label class="toggle"><input type="checkbox" checked />Active</label></div>
+            <div class="card"><h3>Library API</h3><label class="toggle"><input type="checkbox" />Paused</label></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="module-section" id="analytics">
+        <div class="panel">
+          <h2>Analytics & KPIs</h2>
+          <div class="grid grid-3">
+            <div class="card"><h3>Enrollment Yield</h3><div class="progress"><span style="width: 68%;"></span></div></div>
+            <div class="card"><h3>Placement Rate</h3><div class="progress"><span style="width: 76%;"></span></div></div>
+            <div class="card"><h3>Fee Collection</h3><div class="progress"><span style="width: 82%;"></span></div></div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="module-section" id="coverage">
+        <div class="panel">
+          <h2>Complete ERP Coverage for College Administration</h2>
+          <p class="section-sub">Comprehensive modules for administrators, registrar, COE, finance, HR, facilities, compliance, and student services.</p>
+          <div class="coverage-grid">
+            <div class="coverage-card">
+              <h3>Admissions & Registrar</h3>
+              <ul>
+                <li>Lead capture, counseling, applications, merit lists, seat allocation</li>
+                <li>Student Information System (SIS), ID generation, profile lifecycle</li>
+                <li>Academic calendar, course registration, add/drop, credit transfer</li>
+                <li>Document verification, eligibility checks, migration certificates</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Attendance (Geofenced)</h3>
+              <ul>
+                <li>Geofenced check-in, timetable mapped attendance</li>
+                <li>Proxy detection, device validation, late/early thresholds</li>
+                <li>Parent/student alerts, shortage lists, remedial flags</li>
+                <li>Audit trails for every attendance event</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Exams & Results</h3>
+              <ul>
+                <li>Exam schedules, hall tickets, invigilator allocation</li>
+                <li>Mark entry, moderation, revaluation, transcripts</li>
+                <li>Outcome/attainment mapping, CO/PO reports</li>
+                <li>Result publishing, grade sheets, certificates</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Finance & Fees</h3>
+              <ul>
+                <li>Fee structures, scholarships, concessions, fines</li>
+                <li>Invoicing, payment gateways, reconciliation</li>
+                <li>Budgeting, cost centers, fund tracking</li>
+                <li>Audit-ready financial reports</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>HR & Payroll</h3>
+              <ul>
+                <li>Recruitment, onboarding, workload, appraisal</li>
+                <li>Payroll, benefits, tax, leave, attendance sync</li>
+                <li>Faculty CAS workflows, promotions, training</li>
+                <li>Staff roles, access control, separation of duties</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Library & Resources</h3>
+              <ul>
+                <li>Cataloging, circulation, fines, e-resources</li>
+                <li>Interlibrary loans, usage analytics</li>
+                <li>Research repository, plagiarism integration</li>
+                <li>Asset tagging and procurement tracking</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Hostel & Transport</h3>
+              <ul>
+                <li>Room allocation, occupancy, visitor logs</li>
+                <li>Mess plans, attendance, safety checks</li>
+                <li>Transport routes, GPS tracking, passes</li>
+                <li>Maintenance schedules and incident logs</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Placements & Alumni</h3>
+              <ul>
+                <li>Company pipeline, drives, offers, internships</li>
+                <li>Alumni engagement, mentorship, fundraising</li>
+                <li>Career readiness tracking and analytics</li>
+                <li>Placement compliance reports</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Facilities & Inventory</h3>
+              <ul>
+                <li>Asset inventory, AMC schedules, tickets</li>
+                <li>Energy usage, space utilization, audits</li>
+                <li>Procurement workflows, vendor management</li>
+                <li>Stores, stock levels, issue/return</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Compliance & Accreditation</h3>
+              <ul>
+                <li>NAAC/NBA/AICTE/UGC evidence mapping</li>
+                <li>SSR/SAR/AQAR documentation workflows</li>
+                <li>Audit trails, policy versioning, approvals</li>
+                <li>Ranking and regulatory reporting packs</li>
+              </ul>
+            </div>
+            <div class="coverage-card">
+              <h3>Governance & Communication</h3>
+              <ul>
+                <li>Role-based access, approvals, escalations</li>
+                <li>Announcements, SMS/email/app notifications</li>
+                <li>Service desk, SLAs, grievance redressal</li>
+                <li>Integration hub (LMS, biometrics, payment)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="module-section" id="attainment">
+        <div class="panel">
+          <h2>Attainment Calculator</h2>
+          <p class="section-sub">CO/PO attainment with weighted calculations and status classification.</p>
+          <div class="calculator">
+            <div class="calc-grid">
+              <label class="calc-field">Program
+                <select id="program">
+                  <option>UG Engineering</option>
+                  <option>UG Management</option>
+                </select>
+              </label>
+              <label class="calc-field">Batch
+                <select id="batch">
+                  <option>2026</option>
+                  <option>2025</option>
+                </select>
+              </label>
+              <label class="calc-field">Target Attainment (%)
+                <input id="target" type="number" min="1" max="100" value="70" />
+              </label>
+              <label class="calc-field">Weighting Method
+                <select id="weight">
+                  <option value="equal">Equal</option>
+                  <option value="weighted">Weighted by credits</option>
+                </select>
+              </label>
+            </div>
+            <table class="calc-table">
+              <thead>
+                <tr>
+                  <th>CO</th>
+                  <th>Target (%)</th>
+                  <th>Achieved (%)</th>
+                  <th>Credits</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>CO1</td>
+                  <td><input class="co-target" type="number" value="70" /></td>
+                  <td><input class="co-achieved" type="number" value="78" /></td>
+                  <td><input class="co-credits" type="number" value="3" /></td>
+                </tr>
+                <tr>
+                  <td>CO2</td>
+                  <td><input class="co-target" type="number" value="70" /></td>
+                  <td><input class="co-achieved" type="number" value="72" /></td>
+                  <td><input class="co-credits" type="number" value="4" /></td>
+                </tr>
+                <tr>
+                  <td>CO3</td>
+                  <td><input class="co-target" type="number" value="70" /></td>
+                  <td><input class="co-achieved" type="number" value="66" /></td>
+                  <td><input class="co-credits" type="number" value="3" /></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="calc-result">
+              <button id="calc-btn" class="btn btn-primary">Calculate Attainment</button>
+              <span class="calc-pill" id="calc-score">Overall Attainment: --%</span>
+              <span class="calc-pill" id="calc-status">Status: --</span>
+              <span class="calc-pill" id="calc-gap">Gap to Target: --%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.min.js"></script>
+  <script src="edusys.js"></script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduSys | Create System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-badge">E</span>
+        <span>EduSys</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="edusys.html">Create Access</a>
+        <a class="btn" href="../index.html">Back to UniSys</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width:760px;">
+      <h1 class="section-title">Create System</h1>
+      <p class="section-sub">The Head registers the college first. This generates the unique system key for all admin access.</p>
+
+      <div class="panel" style="margin-top:20px;">
+        <form id="create-system-form">
+          <div class="form-grid">
+            <label>College Email
+              <input id="college-email" type="email" placeholder="principal@college.edu" required />
+            </label>
+            <label>Phone Number
+              <input id="college-phone" type="tel" placeholder="+91 98765 43210" required />
+            </label>
+            <label>Head Name
+              <input id="head-name" type="text" placeholder="Dr. Rao" required />
+            </label>
+            <label>Role
+              <input id="head-role" type="text" placeholder="Principal / Director" required />
+            </label>
+            <label>Password
+              <input id="head-password" type="password" placeholder="Create a password" required />
+            </label>
+          </div>
+          <div class="form-actions" style="margin-top:16px;">
+            <button class="btn btn-primary" type="submit">Register College</button>
+            <a class="btn" href="edusys.html">Go to Access</a>
+          </div>
+        </form>
+
+        <div id="demo-key" class="panel" style="margin-top:20px; display:none;">
+          <h3>Demo System Key</h3>
+          <p class="section-sub">Use this key to access the ERP in demo mode.</p>
+          <strong style="font-size:22px;">EDU-1A2B-3C4D</strong>
+          <div style="margin-top:12px;">
+            <a class="btn btn-primary" href="edusys.html">Create Access</a>
+            <a class="btn" href="erp.html">Open ERP (Demo)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const form = document.getElementById('create-system-form');
+    const demoKey = document.getElementById('demo-key');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      demoKey.style.display = 'block';
+      localStorage.setItem('edusys-key','EDU-1A2B-3C4D');
+      demoKey.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  </script>
+</body>
+</html>

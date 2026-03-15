@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EduSys | Access</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">
+        <span class="logo-badge">E</span>
+        <span>EduSys</span>
+      </div>
+      <div class="hero-actions">
+        <a class="btn" href="../index.html">Back to UniSys</a>
+        <a class="btn btn-primary" href="create-system.html">Create System</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container" style="max-width:720px;">
+      <h1 class="section-title">Access</h1>
+      <p class="section-sub">Access your college system. Admin access is available only after the Head creates the system.</p>
+
+      <div class="panel" style="margin-top:20px;">
+        <form>
+          <div class="form-grid">
+            <label>System Key
+              <input type="text" placeholder="EDU-XXXX-XXXX" required />
+            </label>
+            <label>Email
+              <input type="email" placeholder="admin@college.edu" required />
+            </label>
+            <label>Password
+              <input type="password" placeholder="••••••••" required />
+            </label>
+            <label>Role
+              <input type="text" placeholder="Admin / HOD / Staff" required />
+            </label>
+          </div>
+          <div class="form-actions" style="margin-top:16px;">
+            <a class="btn btn-primary" id="enter-erp" href="erp.html" aria-disabled="true">Enter ERP</a>
+            <a class="btn" href="create-system.html">Create System</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+<script>
+  const enterBtn = document.getElementById('enter-erp');
+  const unlock = localStorage.getItem('edusys-key');
+  if (!unlock) {
+    enterBtn.classList.add('erp-locked');
+    enterBtn.addEventListener('click', (e) => { e.preventDefault(); alert('Create System first to generate a System Key.'); });
+  } else {
+    enterBtn.removeAttribute('aria-disabled');
+    enterBtn.classList.remove('erp-locked');
+  }
+</script>
+</body>
+</html>
